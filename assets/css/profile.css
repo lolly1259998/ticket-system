@@ -1,0 +1,149 @@
+:root {
+  --profile-purple: #ec343c;
+  --profile-light: #f5f6fb;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 180px);
+  padding: 1rem;
+}
+
+.welcome-text {
+  color: var(--profile-purple);
+  font-weight: 700;
+}
+
+.profile-card {
+  background: var(--tunisair-white);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 2rem 2rem 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.profile-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--profile-purple);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-edit {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--profile-purple);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--tunisair-blue);
+}
+
+.profile-stars {
+  color: var(--profile-purple);
+}
+
+.profile-fields {
+  margin-top: 1rem;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.input-group {
+  background: var(--profile-light);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  min-width: 110px;
+  color: var(--tunisair-blue);
+  opacity: 0.8;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--tunisair-blue);
+}
+
+.eye-toggle {
+  border: none;
+  background: transparent;
+  color: var(--tunisair-blue);
+  font-size: 1rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+.eye-toggle:hover {
+  color: var(--profile-purple);
+}
+
+.password-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background: var(--profile-purple);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+.muted-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .input-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

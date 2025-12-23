@@ -1,0 +1,559 @@
+/* Variables de couleurs */
+:root {
+  --tunisair-red: #ec343c;
+  --tunisair-blue: #022744;
+  --tunisair-white: #ffffff;
+  --tunisair-light: #f8f9fa;
+  --tunisair-gray: #6c757d;
+  --tunisair-dark: #343a40;
+  --shadow: 0 10px 40px rgba(2, 39, 68, 0.1);
+  /* Dégradé principal passé au rouge pur */
+  --gradient: linear-gradient(
+    135deg,
+    var(--tunisair-red) 0%,
+    var(--tunisair-red) 100%
+  );
+}
+
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Fond doux rosé similaire au mockup */
+  background: linear-gradient(180deg, #ffe6ea 0%, #ffffff 60%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+/* Wrapper principal */
+.auth-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arrière-plan avec formes */
+.auth-background {
+  /* On masque les formes décoratives pour un look épuré */
+  display: none;
+}
+
+.background-shapes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--tunisair-red);
+  top: -150px;
+  right: -150px;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--tunisair-blue);
+  bottom: -100px;
+  left: -100px;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  background: var(--tunisair-red);
+  bottom: 20%;
+  right: 20%;
+}
+
+/* Container principal */
+.auth-container {
+  width: 100%;
+  max-width: 440px;
+  z-index: 2;
+}
+
+/* Carte d'authentification */
+.auth-card {
+  background: var(--tunisair-white);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 3.5rem 2.5rem 2.5rem;
+  text-align: center;
+  border: 1px solid rgba(236, 52, 60, 0.08);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(2, 39, 68, 0.15);
+}
+
+/* En-tête avec logo */
+.auth-header {
+  margin-bottom: 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  color: var(--tunisair-red);
+  background: linear-gradient(
+    135deg,
+    var(--tunisair-red),
+    var(--tunisair-blue)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-text h1 {
+  color: var(--tunisair-blue);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.logo-text p {
+  color: var(--tunisair-gray);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Icône de profil */
+.profile-icon {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0;
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(236, 52, 60, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+  transform: scale(1.1);
+}
+
+.icon-wrapper i {
+  font-size: 2rem;
+  color: var(--tunisair-white);
+}
+
+/* Titre du formulaire */
+.auth-title {
+  color: var(--tunisair-blue);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: var(--tunisair-gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Groupes de formulaire avec icônes */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-with-icon > i {
+  position: absolute;
+  left: 14px;
+  right: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d; /* gris */
+  font-size: 1.1rem;
+  z-index: 6;
+  transition: color 0.3s ease;
+  pointer-events: none;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 1.2rem 3.5rem 1.2rem 3rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  background: var(--tunisair-light);
+  color: var(--tunisair-blue);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* Bouton œil pour afficher/masquer le mot de passe */
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--tunisair-gray);
+  cursor: pointer;
+  padding: 0;
+  z-index: 3;
+}
+.toggle-password i {
+  font-size: 1.1rem;
+}
+.toggle-password:focus {
+  outline: none;
+}
+
+.input-with-icon input:focus {
+  outline: none;
+  border-color: var(--tunisair-red);
+  background: var(--tunisair-white);
+  box-shadow: 0 0 0 3px rgba(236, 52, 60, 0.1);
+  transform: translateY(-2px);
+}
+
+.input-with-icon input:focus + i {
+  color: var(--tunisair-red);
+}
+
+.input-with-icon input::placeholder {
+  color: var(--tunisair-gray);
+  opacity: 0.7;
+}
+
+/* Options du formulaire */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  color: var(--tunisair-blue);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+  opacity: 0;
+  position: absolute;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--tunisair-gray);
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remember-me input:checked + .checkmark {
+  background: var(--tunisair-red);
+  border-color: var(--tunisair-red);
+}
+
+.remember-me input:checked + .checkmark::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.forgot-password {
+  color: var(--tunisair-red);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.forgot-password:hover {
+  color: #d42a32;
+  text-decoration: underline;
+}
+
+/* Bouton de connexion */
+.btn-login {
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--gradient);
+  color: var(--tunisair-white);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 15px rgba(236, 52, 60, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-login:hover::before {
+  left: 100%;
+}
+
+.btn-login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(236, 52, 60, 0.5);
+}
+
+.btn-login:active {
+  transform: translateY(-1px);
+}
+
+/* Séparateur */
+.separator {
+  margin: 2rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e9ecef;
+}
+
+.separator span {
+  background: var(--tunisair-white);
+  padding: 0 1rem;
+  color: var(--tunisair-gray);
+  font-size: 0.9rem;
+}
+
+/* Liens d'authentification */
+.auth-links {
+  text-align: center;
+}
+
+.auth-links p {
+  color: var(--tunisair-gray);
+  margin-bottom: 1rem;
+}
+
+.register-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--tunisair-blue);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--tunisair-blue);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.register-link:hover {
+  background: var(--tunisair-blue);
+  color: var(--tunisair-white);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(2, 39, 68, 0.2);
+}
+
+/* Messages d'erreur */
+.error-message {
+  background: rgba(236, 52, 60, 0.1);
+  color: #ec343c;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #ec343c;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Messages de succès */
+.success-message {
+  background: rgba(25, 135, 84, 0.12);
+  color: #198754;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #198754;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Footer */
+.auth-footer {
+  background: var(--tunisair-blue);
+  color: var(--tunisair-white);
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+/* Variante minimale pour la page de login épurée */
+.auth-footer.minimal {
+  background: transparent;
+  color: var(--tunisair-blue);
+  padding: 1rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--tunisair-white);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-wrapper {
+    padding: 1rem;
+  }
+
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .shape-1,
+  .shape-2,
+  .shape-3 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .input-with-icon input {
+    padding: 1rem 1rem 1rem 3rem;
+  }
+
+  .btn-login {
+    padding: 1rem;
+  }
+}

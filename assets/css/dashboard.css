@@ -1,0 +1,161 @@
+/* Variables de couleurs Tunisair */
+:root {
+  --tunisair-red: #ec343c;
+  --tunisair-blue: #022744;
+  --tunisair-white: #ffffff;
+  --tunisair-light: #f7f9fc;
+  --tunisair-dark: #010411;
+  --border: #e9ecef;
+  --shadow: 0 8px 24px rgba(2, 39, 68, 0.08);
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.dashboard-header h1 {
+  color: var(--tunisair-blue);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  color: var(--tunisair-blue);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--tunisair-white);
+  padding: 1.25rem 1.25rem 1rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--tunisair-red),
+    rgba(236, 52, 60, 0.6)
+  );
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--tunisair-blue);
+  display: block;
+}
+
+.stat-label {
+  color: var(--tunisair-blue);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.action-btn {
+  background: var(--tunisair-white);
+  color: var(--tunisair-blue);
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+.action-btn:hover {
+  background: rgba(236, 52, 60, 0.1);
+  color: var(--tunisair-red);
+}
+
+.recent-tickets {
+  background: var(--tunisair-white);
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.recent-tickets h3 {
+  color: var(--tunisair-blue);
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.ticket-item {
+  background: var(--tunisair-white);
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-title {
+  color: var(--tunisair-blue);
+  font-weight: 700;
+}
+
+.ticket-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-nouveau {
+  background: rgba(236, 52, 60, 0.15);
+  color: var(--tunisair-red);
+}
+.status-en-cours {
+  background: rgba(255, 165, 0, 0.15);
+  color: #b36b00;
+}
+.status-resolu {
+  background: rgba(40, 167, 69, 0.15);
+  color: #1f7a3c;
+}
+.status-ferme {
+  background: rgba(108, 117, 125, 0.15);
+  color: #495057;
+}
+
+.ticket-meta {
+  color: var(--tunisair-blue);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}

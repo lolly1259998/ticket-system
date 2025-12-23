@@ -1,0 +1,530 @@
+/* Harmonisation des variables avec le layout */
+:root {
+  --red: var(--tunisair-red);
+  --blue: var(--tunisair-blue);
+  --white: var(--tunisair-white);
+  --light: var(--tunisair-light, #f7f9fc);
+  --border: var(--border, #e9ecef);
+  --shadow: var(--shadow, 0 8px 24px rgba(2, 39, 68, 0.08));
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+/* Onglets */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.tab {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--blue);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  font-weight: 700;
+}
+.tab.active {
+  background: rgba(2, 39, 68, 0.08);
+}
+.tab.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: #d42a33;
+  transform: translateY(-2px);
+}
+
+/* Formulaire */
+.ticket-form {
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Bordures pour chaque champ dans le formulaire */
+.ticket-form .form-group {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  padding: 0.9rem 1rem;
+}
+
+.ticket-form .form-group:hover {
+  background: rgba(2, 39, 68, 0.02);
+}
+
+.form-group label {
+  display: block;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--blue);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-help {
+  display: block;
+  margin-top: 0.35rem;
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Amélioration input file */
+input[type="file"] {
+  padding: 0.6rem;
+  background: var(--light);
+  border-style: dashed;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(236, 52, 60, 0.15);
+}
+
+/* Liste des tickets */
+.tickets-list {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.ticket-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr auto;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.ticket-row:last-child {
+  border-bottom: none;
+}
+
+.ticket-row:hover {
+  background: rgba(236, 52, 60, 0.06);
+}
+
+.ticket-row.header {
+  background: var(--white);
+  font-weight: 700;
+  color: var(--blue);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Filtres de statut (liste verticale simple) */
+.status-filters {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 220px;
+}
+.status-filters .status-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+.status-filters .status-link:hover {
+  color: var(--red);
+}
+.status-filters .status-link.active {
+  color: var(--red);
+}
+.status-filters .status-link.reset {
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.ticket-title {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  padding: 0.35rem 0.65rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-view {
+  background: rgba(2, 39, 68, 0.08);
+  color: var(--blue);
+}
+.btn-edit {
+  background: var(--white);
+  color: #28a745;
+  border: 1px solid var(--border);
+}
+
+.btn-filter {
+  background: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--border);
+  padding: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-filter:hover {
+  background: rgba(2, 39, 68, 0.06);
+}
+
+/* Détail du ticket */
+.ticket-detail {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.ticket-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-group label {
+  color: var(--blue);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.info-group span {
+  color: var(--blue);
+  display: block;
+  padding: 0.5rem 0.75rem;
+  background: rgba(2, 39, 68, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* Historique et commentaires */
+.history-section,
+.comments-section,
+.solutions-section {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+/* Activité par utilisateur */
+.activity-section {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.activity-item {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.activity-user {
+  color: var(--blue);
+  font-weight: 700;
+}
+.activity-date {
+  color: var(--light-gray);
+  font-size: 0.8rem;
+}
+
+.activity-counts {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.activity-badge {
+  background: rgba(2, 39, 68, 0.08);
+  color: var(--blue);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.section-title {
+  color: var(--blue);
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 0.5rem;
+}
+
+/* Titres rouges uniquement dans le formulaire de création */
+.ticket-form .section-title {
+  color: var(--red);
+}
+
+.history-item,
+.comment-item,
+.solution-item {
+  background: var(--light);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.comment-header,
+.solution-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.comment-author,
+.solution-author {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.comment-date,
+.solution-date {
+  color: var(--light-gray);
+  font-size: 0.8rem;
+}
+
+.comment-text,
+.solution-text {
+  color: #495057;
+  line-height: 1.55;
+}
+
+/* Description du ticket */
+.ticket-description {
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: #495057;
+}
+
+.solution-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-accept {
+  background: #28a745;
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.btn-accept:hover {
+  background: #218838;
+}
+
+.btn-reject {
+  background: rgba(236, 52, 60, 0.1);
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  margin-left: 0.5rem;
+}
+.btn-reject:hover {
+  background: rgba(236, 52, 60, 0.18);
+}
+
+/* Modal de feedback satisfaction */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  width: 90%;
+  max-width: 520px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+}
+.modal h3 {
+  color: var(--blue);
+  margin-bottom: 0.75rem;
+}
+.modal .form-group {
+  margin-bottom: 0.75rem;
+}
+.modal .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.btn-cancel {
+  background: #eee;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.solution-label-accepted {
+  color: #28a745;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+.solution-label-rejected {
+  color: #d42a33;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+/* Badges de statut harmonisés */
+.ticket-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+}
+
+.status-nouveau {
+  background: rgba(236, 52, 60, 0.15);
+  color: var(--red);
+}
+.status-en-cours {
+  background: rgba(255, 165, 0, 0.18);
+  color: #b36b00;
+}
+.status-resolu {
+  background: rgba(40, 167, 69, 0.18);
+  color: #1f7a3c;
+}
+.status-ferme {
+  background: rgba(108, 117, 125, 0.18);
+  color: #495057;
+}
